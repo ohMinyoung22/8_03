@@ -30,6 +30,13 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        # "crud.authentications.JWTAuthentication",
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+}
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crud',
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
